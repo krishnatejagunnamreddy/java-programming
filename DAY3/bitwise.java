@@ -1,0 +1,12 @@
+package DAY3;
+// Bitwise Operators : & ^ | >> <<
+public class bitwise {
+    public static void main(String[] args) {
+        char beta=120; int delta='B';
+        System.out.println(beta^delta);
+        System.out.println(beta&delta);
+        System.out.println(delta|900);
+        System.out.println(beta>>5);
+        System.out.println(delta<<5);
+    }
+}
