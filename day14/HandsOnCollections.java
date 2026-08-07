@@ -1,0 +1,19 @@
+package day14;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class HandsOnCollections {
+    public static void main(String[] args) {
+        ArrayList<Float> flt = new ArrayList<>();
+        flt.add(5.6F);flt.add(8.1F);flt.add(7.1F);
+         flt.add(9.2F);flt.add(6.2F);flt.add(21.9F);
+         //flt.sort((f1,f2)->f2.compareTo(f1));
+         Collections.reverse(flt);
+         System.out.println(flt);
+         System.out.println(Collections.max(flt));
+         System.out.println(Collections.min(flt));
+         Collections.replaceAll(flt,5.6F,1.1F);
+         System.out.println(flt);
+    }
+}
