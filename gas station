@@ -1,0 +1,29 @@
+class Solution {
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        int costl=0;
+        int gasl=0;
+        for(int i=0;i<gas.length;i++){
+            gasl+=gas[i];
+            costl+=cost[i];
+        }
+        if(gasl<costl) return -1;
+        for(int i=0;i<gas.length;i++){
+            int count=1;
+            int rem=0;
+            int j=i;
+            while(count<gas.length){
+                if(j<gas.length){
+                    if((rem+gas[j])>cost[j]){
+                        rem = (rem+gas[j])-cost[j];
+                        count++;
+                    }
+                    else break;
+                    if(j==gas.length-1) j = 0;
+                    else j++;
+                }
+            }
+            if(count==gas.length) return i;
+        }
+        return -1;
+    }
+}
