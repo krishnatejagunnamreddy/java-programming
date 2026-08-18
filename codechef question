@@ -1,0 +1,16 @@
+class Codechef {
+    public static void main(String[] args) {
+        // Declare and initialize variables
+        int students = 10, packsOfCandies = 5, candiesPerPack = 8, extraCandies = 2;
+
+        // Calculate total candies available
+        int totalCandies = (packsOfCandies * candiesPerPack) + extraCandies;
+
+        // Calculate average candies per student
+        int averageCandies = totalCandies / students;
+
+        // Print the results
+        System.out.println(totalCandies);
+        System.out.println(averageCandies);
+    }
+}
