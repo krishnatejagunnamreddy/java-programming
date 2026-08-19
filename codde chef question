@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt();
+
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            long K = sc.nextLong();
+
+            long sum = 0;
+            long max = 0;
+            int answer = 0;
+
+            for (int i = 0; i < N; i++) {
+                long x = sc.nextLong();
+
+                sum += x;
+                max = Math.max(max, x);
+
+                if (sum - max <= K) {
+                    answer = i + 1;
+                }
+            }
+
+            System.out.println(answer);
+        }
+
+        sc.close();
+    }
+}
