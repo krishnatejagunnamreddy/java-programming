@@ -1,0 +1,29 @@
+class Solution {
+    public int countPrimes(int n) {
+        int count=0;
+        if(n<=1){
+            return 0;
+        }
+        else{
+        for(int m=2;m<n;m++){
+            int primecount=0;
+            if(m==2||m==3||m==5){
+                count++;
+            }
+            else if(m%2==0||m%3==0||m%5==0){
+            }
+            else{
+                for(int k =2;k<m;k++){
+                    if(m%k==0){
+                        primecount++;
+                    }
+                }
+                if(primecount==0){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    }
+}
