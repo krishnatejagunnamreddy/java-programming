@@ -1,0 +1,6 @@
+class Solution {
+    public int divide(int dividend, int divisor) {
+        int result =(int) (dividend/divisor);
+        return result;
+    }
+}
