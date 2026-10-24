@@ -1,0 +1,35 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int[] dup = new int[n];
+        for(int i=0;i<n;i++){
+            dup[i] = i+1; 
+        }
+        int[] board = new int[n];
+        for(int i=0;i<n;i++){
+            board[i] = scan.nextInt();
+        }
+        int count=0;
+        while(count>=0){
+            count++;
+            int[] comp = new int[n];
+            for(int i=0;i<n;i++){
+                comp[board[i]-1] = dup[i];
+            }
+            int c=0;
+            for(int i=0;i<n;i++){
+                if(comp[i]==i+1){
+                    c++;
+                }
+            }
+            if(c==n) break;
+             for(int i=0;i<n;i++){
+                dup[i] = comp[i];
+            }
+            }
+        System.out.print(count);
+        scan.close();
+    }
+}
