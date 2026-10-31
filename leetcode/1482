@@ -1,0 +1,32 @@
+class Solution {
+    public int minDays(int[] bloomday, int m, int k) {
+        int max=bloomday[0] , min = bloomday[0],n=bloomday.length;
+        for(int i=0;i<n;i++){
+            if(max<bloomday[i]) max = bloomday[i];
+            if(min>bloomday[i]) min = bloomday[i];
+        }
+        int val=max;
+        if(n<(long)m*k) return -1;
+        while(min<=max){
+            int day = (min+max)/2;
+            int count=0;
+            int  bouq=0;
+            for(int i=0;i<n;i++){
+                if(bloomday[i]<=day) count++;
+                else count=0;
+                if(count==k){
+                    bouq++;
+                    count=0;
+                }
+            }
+
+            if(bouq>=m){ 
+                if(val>day) val = day;
+                max = day-1;
+            }
+            else min = day+1;
+            
+        }
+        return val;
+    }
+}
