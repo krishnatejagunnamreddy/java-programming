@@ -1,0 +1,15 @@
+class Solution {
+    public int singleNonDuplicate(int[] nums) {
+       int min = 1 , max = nums.length-2;
+       if(nums.length==1) return nums[0];
+       
+       while(min<=max){
+        if(nums[min]!=nums[min-1]&&nums[min]!=nums[min+1]) return nums[min];
+        if(nums[max]!=nums[max-1]&&nums[max]!=nums[max+1]) return nums[max];
+        min++;
+        max--;
+       }
+       if(nums[0]!=nums[1]) return nums[0];
+       return nums[nums.length-1];
+    }
+}
